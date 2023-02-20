@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Helvetica', sans-serif;
+      background: rgb(26, 188, 156);
+      /* background: -moz-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%); */
+      /* background: -webkit-linear-gradient(-45deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%); */
+      background: linear-gradient(135deg, rgba(26, 188, 156, 1) 0%, rgba(142, 68, 173, 1) 100%);
+      /* background-color: black; */
+    }
+    @keyframes float {
+      0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+      }
+      50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+      }
+      100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+      }
+    }
+    .container {
+      /* width: 100%; */
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin-left: 45%;
+      margin-top: 30px;
+    }
+    .avatar {
+      width: 150px;
+      height: 150px;
+      box-sizing: border-box;
+      border: 5px white solid;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+      transform: translatey(0px);
+      animation: float 3s ease-in-out infinite;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .text {
+      width: 100%;
+      color: rgb(188, 137, 26);
+      ;
+      transform: translatey(0px);
+      animation: float 3s ease-in-out infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .media , a {
+      display: flex;
+      margin: auto auto;
+      padding: 10px;
+      width: 250px;
+      /* height: 300px; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2%;
+      margin-bottom: 70px;
+    }
+    
+    button {
+      border-radius: 9px;
+      padding: 14px 4px;
+      width: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-style: oblique;
+      border: 4px solid black;
+      font-size: 20px;
+      font-style: normal;
+      box-decoration-break: clone;
+      background-color: black;
+      color: aliceblue;
+      position: absolute;
+    }
+    a :hover {
+      background-color: white;
+      color: black;
+    }
+    
+    .about {
+      border: 2px solid black;
+      background-color: white;
+      /* width: 100%; */
+      height: auto;
+      margin: 9px;
+      border: 1px solid black;
+      border-radius: 9px;
+    }
+    .main{
+    
+      color: orangered;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto;
+      padding: 0px;
+      font-display: unset;
+    }
+    .main h1{
+      font-size: 28px;
+      font-weight: 800;
+      font-style: normal;
+      outline: none;
+    }
+    .main  :hover{
+      color: blue;
+      shape-outside: margin-box;
+      box-shadow: 10% 100%;
+      font-size: 30px;
+      font-style: oblique;
+      font-weight: 900
+    }
+    .inner{
+      display: flex;
+      margin: 5px;
+      justify-content: space-between;
+     margin-top: 100px;
+    }
+   .inner .right{
+    /* margin-left: auto; */
+    font-size: 26px;
+    font-weight: 800;
+    font-style: italic;
+    /* max-width: 60%; */
+    /* align-items: stretch; */
+   }
+   .inner .left{
+    margin-right: 20px;
+   }
+ .left img{
+  width: 200px;
+    height: 200px;
+  
+   }
+   .left :hover{
+    animation: float alternate 2s ease-in;
+width: 370px;
+height: auto;
+}   
+.parent{
+  display: grid;
+  grid-template-columns: repeat(3,0.5fr);
+  gap: 10px;
+  padding: 10px;
+}
+.child{
+  display: grid;
+  place-items: center;
+  padding: 40px;
+  
+}
+.child img{
+  width: 200px;
+  height: 180px;
+}
+.child :hover{
+  animation: float 2s ease-in-out;
+  box-shadow: #111;
+  border: 2px solid black;
+  border-radius: 1px;
+}
+@media(max-width:700px){
+  .parent{
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media(max-width:480px){
+  .parent{
+    grid-template-columns: repeat(1,1fr);
+   
+  }
+  .child{
+    width: 50%;
+    height: 40%;
+    align-items: center;
+  }
+}
+
+
+
+.boxes{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+    }
+    .boxes .bo{
+      position: relative;
+      width: 20rem;
+      height: 20rem;
+      margin: 3rem;
+    }
+    .boxes .bo:hover .imgbox{
+      transform: translate(-1.5rem, -1.5rem);
+    }
+    .boxes .bo:hover .content{
+      transform: translate(3.5rem,3.5rem);
+    }
+    .imgbox{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+      transition: all 0.5s ease-in-out;
+      
+    }
+   
+    .imgbox img{
+      width: 17rem;
+      height: 16rem;
+      object-fit: cover;
+      resize: both;
+    }
+    .content{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 90%;
+      height: 80%;
+      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
+      background-color: #fff;
+      z-index: 1;
+      align-items: flex-end;
+      text-align: center;
+      transition: 0.5s ease-in-out;
+      
+    }
+   
+    .content h2{
+      display: block;
+      font-size: 2rem;
+      color: #111;
+      font-weight: 500;
+      line-height: 2rem;
+      letter-spacing: 1px;
+
+    }
+    .content span{
+      font-size: 1.4rem;
+      color: #555;
+      font-weight: 300;
+      letter-spacing: 2px;
+
+    }
+    @media (max-width:700px){
+      .boxes .bo:hover .content{
+        transform: translate(0,3.5rem);
+      }
+      .boxes .bo :hover .imgbox{
+        transform: translate(0,-3.5rem);
+      }
+      
+    }
+   
+   
+   
+  
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="avatar">
+      <img src="images/profile.jpg" alt="Skytsunami" />
+    </div>
+  </div>
+  <div class="text">
+    <h1>
+      Hello, I am Sushant verma
+    </h1>
+  </div>
+  <a href="images/resume.pdf" target="_blank">
+    <button>
+      <p1>Download CV</p1>
+    </button></a>
+  <div class="media">
+    <a href="https://instagram.com/_sushant___verma___?igshid=YmMyMTA2M2Y=" target="_blank">
+      <img src="images/instagram.ico">
+    </a>
+    <a href="https://www.linkedin.com/in/sushant-verma-b53171226" target="_blank">
+      <img src="images/linkedin.png">
+    </a>
+    <a href="https://github.com/Vermasushant144" target="_blank">
+        <img src="images/github.png">
+      
+      </a>
+      
+      
+  </div>
+  </div>
+  <div class="about">
+    <div class="main">
+      <h1>
+        About
+      </h1>
+    </div>
+    <div class="inner">
+      <div class="right">
+Hello, 
+I am sushant Verma ,currently in 2nd year of Bachelor of Technology.I am a web Developer and 
+worked on various technologies like HTML , CSS ,PHP , BOOTSTRAP , PYTHON , JAVASCRIPT. 
+I am a coder, who likes to hunt bugs, develop things and find innovatiove solutions to critical problems .
+My best known language is python including with this I am aware with various libaries like Pandas ,Numpy,Matplotlib and framework
+like Tkinter . I made a webite by implemeting my skills and tries to make it responsive so that I can interact with as much as possible irresective of device.
+      </div>
+      <div class="left">
+<img src="images/undraw_Creation_re_d1mi (1).png">
+      </div>
+
+    </div>
+    
+    
+  </div>
+ 
+  
+  <div class="about">
+    <div class="main">
+      <h1>
+    Skill
+      </h1>
+    </div>
+    <div class="parent">
+      <div class="child"><img src="images/html.png"></div>
+      <div class="child"><img src="images/css.png"></div>
+      <div class="child"><img src="images/javascript.png"></div>
+      <div class="child"><img src="images/boatstrap.jpeg"></div>
+      <div class="child"><img src="images/php.png"></div>
+      <div class="child"><img src="images/pyython.jpeg"></div>
+    </div>
+
+    
+  </div>
+  </div>
+  
+</div>
+<div class="about">
+    <div class="main">
+      <h1>
+        Project
+      </h1>
+    </div>
+    <div class="boxes">
+      <div class="bo">
+        <div class="imgbox">
+       <a href="https://github.com/Vermasushant144/HTML-project.git">
+        <img src="images/html.png"/>
+       </a>
+  
+        </div>
+        <div class="content">
+          <h3>
+            <br>
+
+             <br>
+            <span>Click on the photo get the soucer code</span>
+          </h3>
+        </div>
+      </div>
+      <div class="bo">
+        <div class="imgbox">
+         <a href="https://github.com/Vermasushant144/calculator-by-HTML-and-CSS-project.git">
+        <img src="images/html and css.png"/>
+       </a>
+        </div>
+        <div class="content">
+          <h3>
+           <br>
+            <span>Click on the photo get the soucer code</span>
+          </h3>
+        </div>
+      </div>
+      <div class="bo">
+        <div class="imgbox">
+          <a href="https://github.com/Vermasushant144/snake-water-game-.git">
+          <img src="images/pyython.jpeg"/>
+          </a>
+
+  
+        </div>
+        <div class="content">
+          <h3>
+            <br>
+            <span>Click on the photo get the soucer code</span>
+          </h3>
+        </div>
+      </div>
+      <br>
+      <div class="bo">
+        <div class="imgbox">
+         <a href="https://github.com/Vermasushant144/PHP-project.git">
+          <img src="images/php.png"/>
+         </a>
+  
+        </div>
+        <div class="content">
+          <h3>
+            <br>
+            <span>Click on the photo get the soucer code</span>
+          </h3>
+        </div>
+      </div>
+      <div class="bo">
+        <div class="imgbox">
+          <a href="https://github.com/Vermasushant144/personal-portfolio.git">
+            <img src="images/portfolio.jpeg"/>
+           </a>
+    
+      \
+  
+        </div>
+        <div class="content">
+          <h3>
+            <br>
+            <span>Click on the photo get the soucer code</span>
+          </h3>
+        </div>
+      </div>
+      <div class="bo">
+        <div class="imgbox">
+          <a href="https://github.com/Vermasushant144/colleage-project-talking-plant.git">
+            <img src="images/mega.jpeg"/>
+          </a>
+     
+  
+        </div>
+        <div class="content">
+          <h3>
+           <br>
+            <span>Click on the photo get the soucer code</span>
+          </h3>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="about">
+      <div class="main">
+        <h1>
+      Certificate
+        </h1>
+      </div>
+      <div class="parent">
+        <div class="child"><img src="images/duke1.jpg"></div>
+        <div class="child"><img src="images/duke2.jpg"></div>
+        <div class="child"><img src="images/ibm1.jpg"></div>
+        <div class="child"><img src="images/intenship1.jpg"></div>
+        <div class="child"><img src="images/linkdin1.jpg"></div>
+        <div class="child"><img src="images/mich1.jpg"></div>
+        <div class="child"><img src="images/python1.jpg"></div>
+        <div class="child"><img src="images/toroto1.jpg"></div>
+      </div>
+  
+      
+    </div>
+    </div>
+    
+  </div>
+
+</div>
+  
+<div class="about">
+  <div class="main">
+    <h1>
+      Gallery
+    </h1>
+  </div>
+  <div class="boxes">
+    <div class="bo">
+      <div class="imgbox">
+        <img src="images/codingninjas.jpg"/>
+
+      </div>
+      <div class="content">
+        <h4>
+           <br>
+           <br>
+          <span>  First visit in the "CODING NINJAS" </span>
+        </h4>
+      </div>
+    </div>
+    <div class="bo">
+      <div class="imgbox">
+        <img src="images/coding gift.jpg"/>
+
+      </div>
+      <div class="content">
+        <h4>
+           <br>
+           <br>
+          <span>Some small swags by CODING NINJAS</span>
+        </h4>
+      </div>
+    </div>
+    <div class="bo">
+      <div class="imgbox">
+        <img src="images/google gift1.jpg"/>
+
+      </div>
+      <div class="content">
+        <h4>
+          <br>
+          <br>
+          <span>GOOGLE gifted a some swags</span>
+        </h4>
+      </div>
+    </div>
+    <br>
+    <div class="bo">
+      <div class="imgbox">
+        <img src="images/HACKTOFEST.jpg"/>
+
+      </div>
+      <div class="content">
+        <h4>
+        <br>
+        <br>
+          <span>Second visit in the "HACKTOFEST"</span>
+        </h4>
+      </div>
+    </div>
+    <div class="bo">
+      <div class="imgbox">
+        <img src="images/hacktofest gift.jpg"/>
+
+      </div>
+      <div class="content">
+        <h2>
+          <br>
+          <br>
+          <br>
+          <br>
+          <span> HACKTOFEST gifted a some swags</span>
+        </h2>
+      </div>
+    </div>
+    <div class="bo">
+      <div class="imgbox">
+        <img src="images/coding 2.jpg"/>
+
+      </div>
+      <div class="content">
+        <h2>
+          sushant verma <br>
+          <span>software eng.</span>
+        </h2>
+      </div>
+    </div>
+  </div>
+  
+
+</div>
+ 
+</body>
+</html>
